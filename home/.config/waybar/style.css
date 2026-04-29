@@ -1,0 +1,140 @@
+/* Waybar minimal robusto (sin dependencia de icon fonts) */
+
+* {
+  font-family: Inter, "Inter", "Inter Variable", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background: transparent;
+  color: #f5f5f7;
+}
+
+window#waybar > box {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+/* Grupos tipo “isla” */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 6px 14px;
+  margin: 0 4px;
+  background: rgba(28, 28, 30, 0.55);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modules-left {
+  margin-left: 0;
+}
+
+.modules-right {
+  margin-right: 0;
+}
+
+tooltip {
+  font-family: Inter, "Inter", "Inter Variable", sans-serif;
+  background: rgba(28, 28, 30, 0.94);
+  color: #f5f5f7;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 12px;
+}
+
+tooltip label {
+  font-family: Inter, "Inter", "Inter Variable", sans-serif;
+}
+
+/* --- Workspaces (Hyprland) --- */
+#workspaces {
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: rgba(245, 245, 247, 0.45);
+  background: transparent;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: rgba(245, 245, 247, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#workspaces button.active {
+  color: #1c1c1e;
+  background: #f5f5f7;
+  font-weight: 600;
+}
+
+#workspaces button.urgent {
+  color: #ff453a;
+  background: rgba(255, 69, 58, 0.15);
+}
+
+/* --- Reloj --- */
+#clock {
+  padding: 0 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f5f5f7;
+}
+
+/* --- Workspace fallback --- */
+#custom-current_ws {
+  padding: 0 10px;
+  color: rgba(245, 245, 247, 0.75);
+}
+
+/* --- Red --- */
+#network {
+  padding: 0 8px;
+  color: #f5f5f7;
+  font-weight: 600;
+}
+
+#network.disconnected {
+  color: rgba(245, 245, 247, 0.35);
+}
+
+/* --- Audio --- */
+#pulseaudio {
+  padding: 0 8px;
+  color: #f5f5f7;
+  font-weight: 600;
+}
+
+#pulseaudio.muted {
+  color: rgba(245, 245, 247, 0.4);
+}
+
+/* --- Batería --- */
+#battery {
+  padding: 0 8px;
+  font-family: Inter, "Inter", "Inter Variable", sans-serif;
+  font-weight: 600;
+  color: #f5f5f7;
+}
+
+#battery.warning,
+#battery.critical {
+  color: #ff9f0a;
+}
+
+#battery.critical.discharging {
+  color: #ff453a;
+}

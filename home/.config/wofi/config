@@ -1,0 +1,8 @@
+mode=drun
+width=500
+height=400
+prompt=Buscar aplicaciones...
+image_size=32
+columns=1
+allow_images=true
+gtk_dark=true

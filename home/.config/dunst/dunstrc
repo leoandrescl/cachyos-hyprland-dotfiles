@@ -1,0 +1,71 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 420
+    height = 140
+    origin = top-right
+    offset = 18x54
+    scale = 0
+    notification_limit = 6
+
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 6
+
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 12
+    frame_width = 2
+    corner_radius = 14
+    gap_size = 10
+    separator_color = frame
+    sort = yes
+    font = Inter 11
+    line_height = 4
+    markup = full
+    format = "<b>%s</b>\n<span size='small'>%b</span>"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 24
+    max_icon_size = 40
+    icon_theme = Adwaita
+    sticky_history = yes
+    history_length = 20
+    browser = xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 14
+
+[urgency_low]
+    timeout = 4
+    background = "#16171C"
+    foreground = "#E8EAF2"
+    frame_color = "#2A2D36"
+    highlight = "#5AC8FA"
+
+[urgency_normal]
+    timeout = 6
+    background = "#171923"
+    foreground = "#F5F7FF"
+    frame_color = "#2F6EA7"
+    highlight = "#0A84FF"
+
+[urgency_critical]
+    timeout = 0
+    background = "#241517"
+    foreground = "#FFF1F1"
+    frame_color = "#FF453A"
+    highlight = "#FF453A"

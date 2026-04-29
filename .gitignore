@@ -1,3 +1,14 @@
 *~
 *.swp
 .DS_Store
+
+# Estado local / máquina (no versionar)
+**/fish_variables
+**/*.bkp
+**/*.bak*
+**/session/
+dolphinrc
+trashrc
+pavucontrol.ini
+user-dirs.dirs
+user-dirs.locale

@@ -41,8 +41,8 @@
     "tooltip-format-ethernet": "Ethernet conectado",
     "tooltip-format-disconnected": "Sin conexión",
     "interval": 5,
-    "on-click": "/home/lain/.config/hypr/scripts/network-menu.sh",
-    "on-click-right": "/home/lain/.config/hypr/scripts/network-panel.sh"
+    "on-click": "sh -c \"$HOME/.config/hypr/scripts/network-menu.sh\"",
+    "on-click-right": "sh -c \"$HOME/.config/hypr/scripts/network-panel.sh\""
   },
 
   "pulseaudio": {

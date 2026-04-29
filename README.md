@@ -1,44 +1,45 @@
 # cachyos-b550-hyprland-dotfiles
 
-Configuraciones de **Hyprland (Wayland)** en CachyOS para esta máquina: barra, terminal, notificaciones, portal, shell, tema GTK, SDDM y autostart.
+Dotfiles públicos para **Hyprland (Wayland)** en CachyOS / Arch: lo mínimo para clonar en otro PC y tener el mismo entorno con pocos pasos.
 
-## Qué hay en `home/.config/`
+## ¿Repo público?
 
-| Carpeta / archivo | Rol |
-|-------------------|-----|
-| `hypr/` | Hyprland, hypridle, hyprlock, scripts, `conf.d/` modular |
-| `waybar/` | Barra Wayland |
-| `kitty/` | Terminal |
+Sí puede ser buena idea si **no** subes secretos ni estado privado. Este repo está pensado para eso: solo configs y scripts, sin `fish_variables`, sin backups, sin rutas fijas a `/home/tuusuario` (Waybar usa `$HOME`). Aun así, **revisa antes de cada push** (`git diff`) por si añadiste algo personal.
+
+## Contenido (`home/.config/`)
+
+| Ruta | Qué es |
+|------|--------|
+| `hypr/` | Hyprland modular (`conf.d/`), idle, lock, scripts, keyring |
+| `waybar/` | Barra |
+| `wofi/` | Lanzador / menús |
 | `dunst/` | Notificaciones |
-| `wofi/` | Lanzador |
-| `fish/` | Shell |
-| `xdg-desktop-portal/` | Portales (pantalla, etc.) |
-| `gtk-3.0/` | Tema / ajustes GTK3 |
-| `sddm/` | Tema / recursos SDDM (`lain-custom`) |
-| `autostart/` | `.desktop` de autostart |
-| `session/` | Archivos de sesión |
-| `btop/` | Monitor de sistema |
-| `dolphinrc`, `user-dirs.*`, etc. | Ajustes varios de escritorio |
+| `fish/` | Solo `config.fish` (CachyOS fish + ajustes mínimos) |
+| `xdg-desktop-portal/` | `portals.conf` |
+| `sddm/lain-custom/` | Tema SDDM (editar usuario abajo) |
 
-Incluye `exec-once` del **agente PolicyKit** (`polkit-kde-authentication-agent-1`) para montar discos desde Dolphin sin GNOME/KDE completos.
+Carpetas vacías en tu máquina (p. ej. `kitty/`, `autostart/`) no se versionan.
 
-## Cómo aplicar en otra instalación (o tras formatear)
+## Instalación en otro PC
 
-Copiar encima de tu `~/.config` (haz backup antes):
+1. Clonar y copiar sobre `~/.config` (haz backup antes):
 
 ```fish
-set REPO ~/Projects/cachyos-b550-hyprland-dotfiles
+git clone https://github.com/leoandrescl/cachyos-b550-hyprland-dotfiles.git
+set REPO ~/cachyos-b550-hyprland-dotfiles
 cp -a "$REPO/home/.config/." ~/.config/
 ```
 
-O solo partes concretas, por ejemplo solo Hyprland:
+2. **SDDM:** en `~/.config/sddm/lain-custom/theme.conf` cambia `defaultUser=CHANGE_ME` por tu usuario (`whoami`). Ajusta `background=` si no tienes la misma ruta de wallpaper.
 
-```fish
-cp -a ~/Projects/cachyos-b550-hyprland-dotfiles/home/.config/hypr ~/.config/
-```
+3. **Monitores:** edita `~/.config/hypr/conf.d/10-monitors.conf` a tus salidas y resoluciones (`hyprctl monitors`).
 
-Cierra sesión o reinicia Hyprland tras cambios grandes (`hyprctl reload` no recarga todo).
+4. **XDG carpetas de usuario** (opcional): `xdg-user-dirs-update` o crea `user-dirs.dirs` a mano; no van en el repo.
 
-## Requisitos típicos en Arch/CachyOS
+5. **Fish:** las variables universales (`fish_variables`) las genera Fish en cada máquina; si usas tema **pure** u otro, instálalo en ese PC (`fisher`, etc.) como en tu instalación original.
 
-Paquetes orientativos (ajusta a lo que uses): `hyprland`, `waybar`, `kitty`, `dunst`, `wofi`, `fish`, `xdg-desktop-portal-hyprland`, `xdg-desktop-portal-gtk`, `polkit-kde-agent`, `udisks2`, `ntfs-3g`, etc.
+6. Cierra sesión o reinicia; en Hyprland: `hyprctl reload` cuando toques solo binds/look.
+
+## Paquetes orientativos (Arch/CachyOS)
+
+`hyprland` `hypridle` `hyprlock` `waybar` `wofi` `dunst` `fish` `xdg-desktop-portal-hyprland` `xdg-desktop-portal-gtk` `polkit-kde-agent` `udisks2` `ntfs-3g` `networkmanager` `wireplumber` … (ajusta a lo que uses en scripts y barra.)

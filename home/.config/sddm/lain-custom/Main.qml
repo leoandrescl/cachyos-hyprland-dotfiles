@@ -5,7 +5,7 @@ Rectangle {
   id: root
   color: "#090a0b"
 
-  property string defaultUser: config.defaultUser ? config.defaultUser : "lain"
+  property string defaultUser: config.defaultUser ? config.defaultUser : ""
   property string backgroundPath: config.background ? config.background : "/usr/share/hypr/wall0.png"
   property date now: new Date()
 

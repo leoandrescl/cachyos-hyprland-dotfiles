@@ -1,4 +1,4 @@
-# cachyos-b550-hyprland-dotfiles
+# cachyos-hyprland-dotfiles
 
 [![CachyOS / Arch](https://img.shields.io/badge/CachyOS-Arch-1793D1?logo=archlinux&logoColor=white)](https://cachyos.org/)
 [![Hyprland](https://img.shields.io/badge/Compositor-Hyprland-58a6ff)](https://hyprland.org/)
